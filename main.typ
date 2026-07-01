@@ -87,12 +87,15 @@ place(malign, dy: mdy, dx: mdx,
 )
 ]
 
-#contentbox("5. Oriented place fields", malign:top+left, mdx: 65cm, mdy: 20cm,mheight:20cm, mwidth: 26cm)[
-  #layout(size=>[Width: #size.width])
+#contentbox("5. Oriented place fields", malign:top+left, mdx: 65cm, mdy: 20cm,mheight:18cm, mwidth: 26cm)[
+  //#layout(size=>[Width: #size.width])
   #image("figures/oriented_place_field_example_p20180727s01a03g086c01.png")
+  #text(size:24pt)[
+    An example of an oriented place field (red outline) and a field without orientation preference (orange outline). The activity within red place field was higher (red star vs box plt) when the animal traversed the field in the opposite direction to its major axis (black arrow) compared along the field.
+  ]
 ]
 
-#contentbox("6. Conjunctive responses", malign:top+left, mdx: 65cm, mdy: 41cm,mheight:21.5cm, mwidth: 26cm)[
+#contentbox("6. Conjunctive responses", malign:top+left, mdx: 65cm, mdy: 39cm,mheight:21.5cm, mwidth: 26cm)[
   //#layout(size=>[Width: #size.width])
   #image("figures/place_view_conjunction_p20180814s01a01g020c01.png",width:700pt)
   #text(size:24pt)[
@@ -100,19 +103,29 @@ place(malign, dy: mdy, dx: mdx,
   ]
 ]
 
-#contentbox("6. Summary", malign:top+left, mdx: 92cm, mdy: 20cm,mheight:24cm, mwidth: 25cm)[
+#contentbox("6. Summary", malign:top+left, mdx: 65cm, mdy: 61cm,mheight:21cm, mwidth: 26cm)[
   //#layout(size=>[Width: #size.width])
   #image("figures/summary_figure.png",width:650pt)
   #text(size:24pt)[
     The number of cells falling in the different categories of responsiveness. The Venn-diagrams on top illustrate the overlap between different classes, while the bars show the number of cells in each class.
   ]
-   
+]
+
+#contentbox("8. Trajectory decoding", malign:top+left, mdx: 92cm, mdy: 20cm,mheight:41cm, mwidth: 25cm)[
+  //#layout(size=>[Width: #size.width])
+  #image("figures/sequence_decoding_figure.png",width:650pt)
+  #text(size:24pt)[
+    A) The white traces illustrates some representative trajectories used to train the decoder, while the heatmap represents the density of points visited by all trajectories. B) The coding strength at the peak performance (C) for each cell, separated into different categories. D) The coding strength of all cells as a function of time, sorted according to the categories in B. E) The alignment of coding strength between subsequent time steps.
+  ]
+]
+
+#contentbox("9. Conclusions", malign:top+left, mdx: 92cm, mdy: 62cm,mheight:15cm, mwidth: 25cm)[
 ]
 
 #place(right+bottom,dy: 8cm, 
-      rect(width: 30cm, height:2.6cm, stroke:0pt,
+      rect(width: 25cm, height:2.6cm, stroke:0pt,
         align(left,
-        text(size:28pt)[Funded by the Ministry of Education Tier 3 Research Fund (MOE2017-T3-1-002) and the National Medical Research Council (MOH-000962).]
+        text(size:24pt)[Funded by the Ministry of Education Tier 3 Research Fund (MOE2017-T3-1-002) and the National Medical Research Council (MOH-000962).]
       ) 
     )
     )
