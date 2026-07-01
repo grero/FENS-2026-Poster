@@ -75,16 +75,13 @@ place(malign, dy: mdy, dx: mdx,
 ]
 #contentbox("4. View responses", malign:top+left, mdx: 28cm, mdy: 50cm,mheight:32cm, mwidth: 36cm)[
   //#layout(size=>[Width: #size.width])
-  #table(columns: (1fr, 1fr),stroke:0pt,
-  image("figures/view_response_p20181102s01a01g026c02.png"),
-  image("figures/view_response_p20180905s01a01g020c02.png"),
-  table.cell(colspan: 2,
-    table(columns: (2fr, 3fr), stroke: 0pt,
-    text(size:24pt)[],
-    image("figures/view_responses_summary.png",width:100%)
-    )
-)
-)
+  #image("figures/view_responses_combined.png",width:950pt)
+    #table(columns: (640pt, auto), stroke: 0pt,
+    image("figures/view_response_summary.png",width:639pt),
+    text(size:24pt)[
+      Left: Summary for all view selective cells. A) The number of view fields per cell. The black bar represents cells that were selective without exibiting fields. B) Distribution of field size. C) Distributin of peak firing rate. D) Number of fields overlapping with each bin.
+    ],
+   )
 ]
 
 #contentbox("5. Oriented place fields", malign:top+left, mdx: 65cm, mdy: 20cm,mheight:18cm, mwidth: 26cm)[
