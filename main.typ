@@ -91,31 +91,33 @@ place(malign, dy: mdy, dx: mdx,
     text(size:24pt)[
       #emph[Top]: Place responses for two example cells. For each cell, the gray outline represents the floor of the arena. The raw firing rate (bottom left) was computed as the total number of spikes in each bin divided by the total occupancy in that bin. Bottom right: firing rate obtained by first smoothing occupancy and spike counts. Upper right: SIC computed using the smoothed firing rate. #emph[Right]: Summary statistics. 
     ],
-    image("figures/spatial_responses_summary.png",width:100%) 
+    image("figures/spatial_responses_summary.png",width:600pt) 
   )
 ]
 #contentbox("4. View responses", malign:top+left, mdx: 28cm, mdy: 50.5cm,mheight:31.5cm, mwidth: 36cm)[
   //#layout(size=>[Width: #size.width])
   #image("figures/view_responses_combined_new.png",width:950pt)
     #table(columns: (640pt, auto), stroke: 0pt,
-    image("figures/view_responses_summary.png",width:639pt),
+    image("figures/view_responses_summary.png",width:600pt),
     text(size:24pt)[
-      #emph[Left]: Summary for all view selective cells. A) The number of view fields per cell. The black bar represents cells that were selective without exibiting fields. B) Distribution of field size. C) Distributin of peak firing rate. D) Number of fields overlapping with each bin. #emph[Top]: Three examples of view selective cells.
+      #emph[Left]: Summary for all view selective cells. A) The number of view fields per cell. The black bar represents cells that were selective without exhibiting fields. B) Distribution of field size. C) Distribution of peak firing rate. D) Number of fields overlapping with each bin. #emph[Top]: Three examples of view selective cells. Dots represent view fields.
     ],
    )
 ]
 
-#contentbox("5. Oriented place fields", malign:top+left, mdx: 65cm, mdy: 20cm,mheight:18cm, mwidth: 26cm)[
+#contentbox("5. Oriented place fields", malign:top+left, mdx: 65cm, mdy: 20cm,mheight:16.5cm, mwidth: 26cm)[
   //#layout(size=>[Width: #size.width])
   #image("figures/oriented_place_field_example_p20180727s01a03g086c01.png")
-  #text(size:24pt)[
+  #place(
+  text(size:24pt)[
     An example of an oriented place field (red outline) and a field without orientation preference (orange outline). The activity within red place field was higher (red star vs box plt) when the animal traversed the field in the opposite direction to its major axis (black arrow) compared along the field.
-  ]
+    ]
+  )
 ]
 
-#contentbox("6. Conjunctive responses", malign:top+left, mdx: 65cm, mdy: 39cm,mheight:21.5cm, mwidth: 26cm)[
+#contentbox("6. Conjunctive responses", malign:top+left, mdx: 65cm, mdy: 37.5cm,mheight:22.5cm, mwidth: 26cm)[
   //#layout(size=>[Width: #size.width])
-  #image("figures/place_view_conjunction_p20180814s01a01g020c01.png",width:700pt)
+  #image("figures/place_view_conjunction_p20180710s01a03g086c02.png", width:700pt)
   #text(size:24pt)[
     Spatial activity of one conjunctive cell, conditioned on the view field (in field) and on view bins outside the view field (out of field). The mean firing rate in the place field (red border) was significantly ($p < 0.01$) higher when conditioning on the view field than on other view bins (star vs box plot).
   ]
