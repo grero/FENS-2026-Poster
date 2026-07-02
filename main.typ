@@ -65,7 +65,15 @@ place(malign, dy: mdy, dx: mdx,
 ]
 
 #contentbox("3. Place responses", malign:top+left, mdx: 28cm, mdy: 20cm,mheight:29.5cm, mwidth: 36cm)[
-  #image("figures/place_responses_combined.png",width:963pt)
+  #align(center,
+    image("figures/place_responses_combined.png",width:950pt)
+  )
+  // post processing; add some labels manually
+  #place(dy: -14.5cm, dx: 6cm,text(size:24pt)[Example cell 1])
+  #place(dy: -14.5cm, dx: 17.5cm,text(size:24pt)[Example cell 2])
+  #place(dy: -14.5cm, dx: 25.5cm,text(size:24pt)[Example cell 3])
+  #place(dy: -8.0cm, dx: 17.5cm,text(size:24pt)[Example cell 4])
+  #place(dy: -8.0cm, dx: 25.5cm,text(size:24pt)[Example cell 5])
   #table(columns: (2fr, 3fr),stroke: 0pt,
     text(size:24pt)[
       #emph[Top]: Place responses for two example cells. For each cell, the gray outline represents the floor of the arena. The raw firing rate (bottom left) was computed as the total number of spikes in each bin divided by the total occupancy in that bin. Bottom right: firing rate obtained by first smoothing occupancy and spike counts. Upper right: SIC computed using the smoothed firing rate. #emph[Right]: Summary statistics. 
@@ -75,9 +83,9 @@ place(malign, dy: mdy, dx: mdx,
 ]
 #contentbox("4. View responses", malign:top+left, mdx: 28cm, mdy: 50cm,mheight:32cm, mwidth: 36cm)[
   //#layout(size=>[Width: #size.width])
-  #image("figures/view_responses_combined.png",width:950pt)
+  #image("figures/view_responses_combined_new.png",width:950pt)
     #table(columns: (640pt, auto), stroke: 0pt,
-    image("figures/view_response_summary.png",width:639pt),
+    image("figures/view_responses_summary.png",width:639pt),
     text(size:24pt)[
       Left: Summary for all view selective cells. A) The number of view fields per cell. The black bar represents cells that were selective without exibiting fields. B) Distribution of field size. C) Distributin of peak firing rate. D) Number of fields overlapping with each bin.
     ],
@@ -100,7 +108,7 @@ place(malign, dy: mdy, dx: mdx,
   ]
 ]
 
-#contentbox("6. Summary", malign:top+left, mdx: 65cm, mdy: 61cm,mheight:21cm, mwidth: 26cm)[
+#contentbox("7. Summary", malign:top+left, mdx: 65cm, mdy: 61cm,mheight:21cm, mwidth: 26cm)[
   //#layout(size=>[Width: #size.width])
   #image("figures/summary_figure.png",width:650pt)
   #text(size:24pt)[
