@@ -48,9 +48,13 @@ place(malign, dy: mdy, dx: mdx,
 
 #place(right+top, dy:3cm, dx:-1cm, image("figures/N.1 Logo.jpg",width:13cm))
 
-#contentbox("1. Introduction", malign:top+left, mdy: 20cm,mheight:15cm, mwidth: 27cm)[]
+#contentbox("1. Introduction", malign:top+left, mdy: 20cm,mheight:13cm, mwidth: 27cm)[
+  #text(size:24pt)[
+   The responses of primate Hippocampal cells have been found to exhibit mixed selectivity to both space and view. In this study, we record from such cells as a non-human primate subject navigates a virtual maze. Using a detailed, mesh based method to quantify how these cells respond to both spatial location and gaze position, we find a substantial portion with complex mixed responses to these two aspect of the task. 
+  ]
+]
 
-#contentbox("2. Methods", malign:top+left, mdy: 36cm,mheight:46cm, mwidth: 27cm)[
+#contentbox("2. Methods", malign:top+left, mdy: 34cm,mheight:48cm, mwidth: 27cm)[
   
   //#layout(size=>[Width: #size.width])
   #set text(size:24pt)
@@ -73,7 +77,7 @@ place(malign, dy: mdy, dx: mdx,
   ])
 ]
 
-#contentbox("3. Place responses", malign:top+left, mdx: 28cm, mdy: 20cm,mheight:29.5cm, mwidth: 36cm)[
+#contentbox("3. Place responses", malign:top+left, mdx: 28cm, mdy: 20cm,mheight:30.0cm, mwidth: 36cm)[
   #align(center,
     image("figures/place_responses_combined.png",width:950pt)
   )
@@ -90,7 +94,7 @@ place(malign, dy: mdy, dx: mdx,
     image("figures/spatial_responses_summary.png",width:100%) 
   )
 ]
-#contentbox("4. View responses", malign:top+left, mdx: 28cm, mdy: 50cm,mheight:32cm, mwidth: 36cm)[
+#contentbox("4. View responses", malign:top+left, mdx: 28cm, mdy: 50.5cm,mheight:31.5cm, mwidth: 36cm)[
   //#layout(size=>[Width: #size.width])
   #image("figures/view_responses_combined_new.png",width:950pt)
     #table(columns: (640pt, auto), stroke: 0pt,
@@ -133,10 +137,18 @@ place(malign, dy: mdy, dx: mdx,
   ]
 ]
 
-#contentbox("9. Conclusions", malign:top+left, mdx: 92cm, mdy: 62cm,mheight:15cm, mwidth: 25cm)[
+#contentbox("9. Conclusions", malign:top+left, mdx: 92cm, mdy: 62cm,mheight:17cm, mwidth: 25cm)[
+  #text(size:24pt)[
+  - A majority (60.1%) of hippocampal cells had either place (55.1%) or view (34.5%) modulated responses
+  - A large subset of these cells had identifiable place (74.4%) or view (65.6%) fields
+  - We also found that the majority (62.5%) of cells with both place and view fields exhibited conjunctive responses.
+    - This proportion dropped to 39.6% when excluding cells with oriented place fields
+  - Non-selective cells nevertheless contributed substantially to a decoder trained to decode spatial trajectories. 
+    - Population level analyses can complement single cell results. 
+  ]
 ]
 
-#place(right+bottom,dy: 8cm, 
+#place(right+bottom,dy: 9cm, 
       rect(width: 25cm, height:2.6cm, stroke:0pt,
         align(left,
         text(size:24pt)[Funded by the Ministry of Education Tier 3 Research Fund (MOE2017-T3-1-002) and the National Medical Research Council (MOH-000962).]
