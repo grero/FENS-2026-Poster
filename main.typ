@@ -27,7 +27,7 @@ place(malign, dy: mdy, dx: mdx,
     align(center+horizon,
       stack(dir:ttb,spacing: 1cm,
         align(center, 
-        rect(width: 75%, height: 9cm, stroke: 1pt, text(size: 96pt, weight: "bold")[Place and view responses in the primate Hippocampus during virtual navigation])
+        rect(width: 75%, height: 9cm, stroke: 0pt, text(size: 96pt, weight: "bold")[Place and view responses in the primate Hippocampus during virtual navigation])
       ),
         
         align(center, text(size: 48pt)[Roger Herikstad#super[1], Hui Min Tan#super[1], Joseph YX Cheng#super[2], Tabitha PY Ng#super[1] , Cullen Owens#super[1], Camilo Libedinsky#super[1,2], Shih-Cheng Yen#super[1,3]]),
@@ -46,9 +46,11 @@ place(malign, dy: mdy, dx: mdx,
 #place(left+top, dy:3cm, dx:1cm,text(size:48pt)[Poster nr:\
 *PS04-08PM-566*])
 
-#contentbox("1. Introduction", malign:top+left, mdy: 20cm,mheight:17cm, mwidth: 27cm)[]
+#place(right+top, dy:3cm, dx:-1cm, image("figures/N.1 Logo.jpg",width:13cm))
 
-#contentbox("2. Methods", malign:top+left, mdy: 38cm,mheight:44cm, mwidth: 27cm)[
+#contentbox("1. Introduction", malign:top+left, mdy: 20cm,mheight:15cm, mwidth: 27cm)[]
+
+#contentbox("2. Methods", malign:top+left, mdy: 36cm,mheight:46cm, mwidth: 27cm)[
   
   //#layout(size=>[Width: #size.width])
   #set text(size:24pt)
@@ -57,11 +59,16 @@ place(malign, dy: mdy, dx: mdx,
   *Data Acquisition:*  Neural activity was recorded at 30,000 samples/s (Ripple Neuro), eye gaze was tracked with an infrared camera (Eyelink 1000 Plus, SR Research at 1,000 samples/s).\
   
   *Behavioral task:* The animal performed 400 trials per session of a continuous match-to-sample navigation task set in virtual reality (Unity 3D). A randomly chosen target poster was shown at the start of each trial, with a 25 second time limit for navigation to the correct target location.
-  #table(columns: (1fr, 1fr),stroke: 0pt,
-    image("figures/flat_posters.png",width:300pt),
-    image("figures/real_maze_illustration.png"),
-    image("figures/trajectory_and_gaze_illustration.png")
+  #image("figures/methods_figure_new.png", width:708pt)
+  #table(columns: (400pt, auto),stroke: 0pt,
+    image("figures/smoothing_illustration.png",width:400pt),
+    text(size:24pt)[#emph[Top]: Top-down (left) and 3D (right) view of the virtual maze. The black-and white trace represents the trajectory of the animal for one trial. The dots represent the gaze position of the animal.
+      
+    ]
   )
+  #text(size:24pt)[
+    #emph[Bottom]: Illustration of smoothing approach. A smoothing matrix is formed from the adjacency matrix of the maze (i.e. which elements neighbor each other). The spike count and occupancy in each bin are then smoothed by repeatedly multiplying with this matrix.
+  ]
 ]
 
 #contentbox("3. Place responses", malign:top+left, mdx: 28cm, mdy: 20cm,mheight:29.5cm, mwidth: 36cm)[
@@ -87,7 +94,7 @@ place(malign, dy: mdy, dx: mdx,
     #table(columns: (640pt, auto), stroke: 0pt,
     image("figures/view_responses_summary.png",width:639pt),
     text(size:24pt)[
-      Left: Summary for all view selective cells. A) The number of view fields per cell. The black bar represents cells that were selective without exibiting fields. B) Distribution of field size. C) Distributin of peak firing rate. D) Number of fields overlapping with each bin.
+      #emph[Left]: Summary for all view selective cells. A) The number of view fields per cell. The black bar represents cells that were selective without exibiting fields. B) Distribution of field size. C) Distributin of peak firing rate. D) Number of fields overlapping with each bin. #emph[Top]: Three examples of view selective cells.
     ],
    )
 ]
