@@ -62,13 +62,15 @@ place(malign, dy: mdy, dx: mdx,
   #image("figures/methods_figure_new.png", width:708pt)
   #table(columns: (400pt, auto),stroke: 0pt,
     image("figures/smoothing_illustration.png",width:400pt),
-    text(size:24pt)[#emph[Top]: Top-down (left) and 3D (right) view of the virtual maze. The black-and white trace represents the trajectory of the animal for one trial. The dots represent the gaze position of the animal.
-      
-    ]
+    align(horizon,
+    text(size:24pt)[#emph[Top]: Top-down (left) and 3D (right) view of the virtual maze. The black-and white trace represents the trajectory of the animal for one trial. The dots represent the gaze position of the animal.]
+    )
   )
-  #text(size:24pt)[
+  // let's just cheat a bit
+  #place(
+  text(size:24pt)[
     #emph[Bottom]: Illustration of smoothing approach. A smoothing matrix is formed from the adjacency matrix of the maze (i.e. which elements neighbor each other). The spike count and occupancy in each bin are then smoothed by repeatedly multiplying with this matrix.
-  ]
+  ])
 ]
 
 #contentbox("3. Place responses", malign:top+left, mdx: 28cm, mdy: 20cm,mheight:29.5cm, mwidth: 36cm)[
