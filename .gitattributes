@@ -1,0 +1,2 @@
+*.png -diff -merge -text
+*.png working-tree-encoding=binary
