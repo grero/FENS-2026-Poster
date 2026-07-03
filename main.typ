@@ -50,7 +50,7 @@ place(malign, dy: mdy, dx: mdx,
 
 #contentbox("1. Introduction", malign:top+left, mdy: 20cm,mheight:12cm, mwidth: 27cm)[
   #text(size:24pt)[
-   The responses of primate Hippocampal cells have been found to exhibit mixed selectivity to both space and view. In this study, we record from such cells as a non-human primate subject navigates a virtual maze. Using a detailed, mesh based method to quantify how these cells respond to both spatial location and gaze position, we find a substantial portion with complex mixed responses to these two aspects of the task. 
+   The responses of primate Hippocampal cells have been found to exhibit mixed selectivity to both space and view, supporting an increased role of vision in navigation compared to rodents. In this study, we record from such cells as a non-human primate subject navigates a virtual maze. Using a detailed, mesh based method to quantify how these cells respond to both spatial location and gaze position, we find a substantial portion with complex mixed responses to these two aspects of the task. 
   ]
 ]
 
@@ -66,14 +66,14 @@ place(malign, dy: mdy, dx: mdx,
   #image("figures/methods_figure_new.png", width:708pt)
   #table(columns: (400pt, auto),stroke: 0pt,
     image("figures/smoothing_illustration.png",width:400pt),
-    align(horizon,
+    align(top,
     text(size:24pt)[#emph[Top]: Top-down (left) and perspective (right) view of the virtual maze. The black-and white trace represents the trajectory of the animal for one trial. The dots represent the gaze position of the animal for the same trial.]
     )
   )
   // let's just cheat a bit
   #place(
   text(size:24pt)[
-    #emph[Bottom]: Illustration of the smoothing approach. A smoothing matrix is formed from the adjacency matrix of the maze (i.e. which elements neighbor each other). The spike count and occupancy in each bin are then smoothed by repeatedly multiplying with this matrix.
+    #emph[Bottom]: Illustration of the smoothing approach. A smoothing matrix was formed from the adjacency matrix of the maze (i.e. which bins neighbor each other). The spike count (Z) and occupancy in each bin were then smoothed (Zs) by repeatedly multiplying with this matrix.
   ])
 ]
 
@@ -89,8 +89,8 @@ place(malign, dy: mdy, dx: mdx,
   #place(dy: -8.0cm, dx: 25.5cm,text(size:24pt)[Example cell 5])
   #table(columns: (2fr, 3fr),stroke: 0pt,
     text(size:24pt)[
-      #place(dy: -1cm)[
-      #emph[Top]: Place responses for 5 example cells, with more details for the first. The gray outline represents the floor of the arena while the colored boundaries represent putative place fields. The raw firing rate was computed as the total number of spikes in each bin divided by the total occupancy in that bin. Lower right: firing rate obtained by first smoothing occupancy and spike counts,then taking the ratio. #emph[Right]: Summary statistics. ]
+      #place(dy: -1.7cm)[
+      #emph[Top]: Place responses for 5 place selective cells, with  additional details included for the first. The gray outline represents the floor of the arena while the colored boundaries represent putative place fields. The raw spike rate was computed as the total number of spikes in each bin divided by the total occupancy in that bin. The smoothed spike rate was obtained by first smoothing occupancy and spike counts,then taking the ratio. #emph[Right]: Summary statistics. ]
     ],
     image("figures/spatial_responses_summary.png",width:600pt) 
   )
@@ -102,11 +102,11 @@ place(malign, dy: mdy, dx: mdx,
   #align(left, 
     image("figures/view_responses_summary.png",width:600pt),
   )
-  #place(dx: 600pt,dy: -360pt,
+  #place(dx: 600pt,dy: -367pt,
     rect(width: 360pt,stroke: 0pt,
     text(size:24pt)[
-      #emph[Top]: Three examples of cells exhibiting view selectivity. Dots represent view fields.
-      #emph[Left]: Summary for all cells exhibiting view selectivity. A) The number of view fields per cell. The black bar represents cells that were selective without exhibiting fields. B) Distribution of field sizes. C) Distribution of peak firing rates. D) Number of overlapping fields in each bin. 
+      #emph[Top]: Three examples of view selective cells. Dots represent view fields. Raw and smoothed spike rates were computed as for place.
+      #emph[Left]: Summary for all cells exhibiting view selectivity. A) The number of view fields per cell. The black bar represents cells that were selective without exhibiting fields. B) Distribution of field sizes. C) Distribution of peak firing rates. D) Spatial distribution of fields. 
     ],
    )
  )
@@ -117,7 +117,7 @@ place(malign, dy: mdy, dx: mdx,
   #image("figures/oriented_place_field_example_p20180727s01a03g086c01.png",width:680pt)
   #place(
   text(size:24pt)[
-    An example of an oriented place field (red outline) and a field without orientation preference (orange outline). The activity within the red place field was higher (red star vs box plot) when the animal traversed the field in the reverse, compared to forward, direction along its major axis (black arrow).
+    An example of a directional place field (red outline) and a field without direction preference (orange outline). The activity within the red place field was higher (red star vs box plot) when the animal traversed the field in the reverse direction along its major axis (black arrow) compared to the forward direction.
     ]
   )
 ]
@@ -125,9 +125,11 @@ place(malign, dy: mdy, dx: mdx,
 #contentbox("6. Conjunctive responses", malign:top+left, mdx: 65cm, mdy: 38cm,mheight:22cm, mwidth: 26cm)[
   //#layout(size=>[Width: #size.width])
   #image("figures/place_view_conjunction_p20180710s01a03g086c02.png", width:700pt)
-  #text(size:24pt)[
-    Spatial activity of a cell exhibiting conjunctive activity, conditioned on the view field (in field) and on view bins outside the view field (out of field). The mean firing rate in the place field (pink border) was significantly ($p < 0.01$) higher when conditioning on the view field than on other view bins (star vs box plot).
-  ]
+  #place(
+    text(size:24pt)[
+    Spatial activity of a cell exhibiting conjunctive responses to place and view. #emph[Box plot]: Activity conditioned on the view field (In field, #text(fill: rgb(98%, 50%, 45%),sym.star.op)) and on view bins outside the view field (Out of field, pink distribution). The mean spike rate in the place field (pink border) was significantly ($p < 0.01$) higher when conditioning on the view field than on other view bins (#text(fill: rgb(98%, 50%, 45%),sym.star.op) vs distribution).
+    ]
+  )
 ]
 
 #contentbox("7. Summary", malign:top+left, mdx: 65cm, mdy: 61cm,mheight:21cm, mwidth: 26cm)[
@@ -138,21 +140,23 @@ place(malign, dy: mdy, dx: mdx,
   ]
 ]
 
-#contentbox("8. Trajectory decoding", malign:top+left, mdx: 92cm, mdy: 20cm,mheight:41cm, mwidth: 25cm)[
+#contentbox("8. Trajectory decoding", malign:top+left, mdx: 92cm, mdy: 20cm,mheight:41.7cm, mwidth: 25cm)[
   //#layout(size=>[Width: #size.width])
   #image("figures/sequence_decoding_figure.png",width:650pt)
-  #text(size:24pt)[
-    A) The white traces illustrates some representative trajectories used to train the decoder, while the heatmap represents the density of points visited by all trajectories. B) The coding strength at the peak performance (C) for each cell, separated into different categories. D) The coding strength of all cells as a function of time, sorted according to the categories in B. E) The alignment of coding strength between subsequent time steps.
-  ]
+  #place(
+    text(size:24pt)[
+      A) The white traces illustrate some representative trajectories used to train the decoder, while the heatmap represents the density of points visited by all trajectories. B) The coding strength at the peak performance (C) for each cell, separated into different categories. Note that non-selective cells had higher coding strength than selective cells. D) The coding strength of all cells as a function of time, sorted according to the categories in B. E) The alignment of coding strength between subsequent time steps. The code became more stable as time progressed.
+    ]
+  )
 ]
 
-#contentbox("9. Conclusions", malign:top+left, mdx: 92cm, mdy: 62cm,mheight:17cm, mwidth: 25cm)[
+#contentbox("9. Conclusions", malign:top+left, mdx: 92cm, mdy: 62.5cm,mheight:17cm, mwidth: 25cm)[
   #text(size:24pt)[
   - A majority (60.1%) of hippocampal cells had either place (55.1%) or view (34.5%) modulated responses
   - A large subset of these cells had identifiable place (74.4%) or view (65.6%) fields
   - We also found that the majority (62.5%) of cells with both place and view fields exhibited conjunctive responses.
-    - This proportion dropped to 39.6% when excluding cells with oriented place fields
-  - Non-selective cells nevertheless contributed substantially to a decoder trained to decode spatial trajectories. 
+    - This proportion dropped to 39.6% when excluding cells with directional place fields
+  - Non-selective cells contributed substantially to a decoder trained to decode spatial trajectories. 
     - Population level analyses can complement single cell results. 
   ]
 ]
