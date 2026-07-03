@@ -48,13 +48,13 @@ place(malign, dy: mdy, dx: mdx,
 
 #place(right+top, dy:3cm, dx:-1cm, image("figures/N.1 Logo.jpg",width:13cm))
 
-#contentbox("1. Introduction", malign:top+left, mdy: 20cm,mheight:13cm, mwidth: 27cm)[
+#contentbox("1. Introduction", malign:top+left, mdy: 20cm,mheight:12cm, mwidth: 27cm)[
   #text(size:24pt)[
-   The responses of primate Hippocampal cells have been found to exhibit mixed selectivity to both space and view. In this study, we record from such cells as a non-human primate subject navigates a virtual maze. Using a detailed, mesh based method to quantify how these cells respond to both spatial location and gaze position, we find a substantial portion with complex mixed responses to these two aspect of the task. 
+   The responses of primate Hippocampal cells have been found to exhibit mixed selectivity to both space and view. In this study, we record from such cells as a non-human primate subject navigates a virtual maze. Using a detailed, mesh based method to quantify how these cells respond to both spatial location and gaze position, we find a substantial portion with complex mixed responses to these two aspects of the task. 
   ]
 ]
 
-#contentbox("2. Methods", malign:top+left, mdy: 34cm,mheight:48cm, mwidth: 27cm)[
+#contentbox("2. Methods", malign:top+left, mdy: 33cm,mheight:49cm, mwidth: 27cm)[
   
   //#layout(size=>[Width: #size.width])
   #set text(size:24pt)
@@ -62,18 +62,18 @@ place(malign, dy: mdy, dx: mdx,
   
   *Data Acquisition:*  Neural activity was recorded at 30,000 samples/s (Ripple Neuro), eye gaze was tracked with an infrared camera (Eyelink 1000 Plus, SR Research at 1,000 samples/s).\
   
-  *Behavioral task:* The animal performed 400 trials per session of a continuous match-to-sample navigation task set in virtual reality (Unity 3D). A randomly chosen target poster was shown at the start of each trial, with a 25 second time limit for navigation to the correct target location.
+  *Behavioral task:* The animal performed 400 trials per session of a continuous match-to-sample memory-guided navigation task set in virtual reality (Unity 3D). A randomly chosen target poster was shown at the start of each trial, with a 25 second time limit for navigating to the correct target location.
   #image("figures/methods_figure_new.png", width:708pt)
   #table(columns: (400pt, auto),stroke: 0pt,
     image("figures/smoothing_illustration.png",width:400pt),
     align(horizon,
-    text(size:24pt)[#emph[Top]: Top-down (left) and 3D (right) view of the virtual maze. The black-and white trace represents the trajectory of the animal for one trial. The dots represent the gaze position of the animal.]
+    text(size:24pt)[#emph[Top]: Top-down (left) and perspective (right) view of the virtual maze. The black-and white trace represents the trajectory of the animal for one trial. The dots represent the gaze position of the animal for the same trial.]
     )
   )
   // let's just cheat a bit
   #place(
   text(size:24pt)[
-    #emph[Bottom]: Illustration of smoothing approach. A smoothing matrix is formed from the adjacency matrix of the maze (i.e. which elements neighbor each other). The spike count and occupancy in each bin are then smoothed by repeatedly multiplying with this matrix.
+    #emph[Bottom]: Illustration of the smoothing approach. A smoothing matrix is formed from the adjacency matrix of the maze (i.e. which elements neighbor each other). The spike count and occupancy in each bin are then smoothed by repeatedly multiplying with this matrix.
   ])
 ]
 
@@ -89,7 +89,8 @@ place(malign, dy: mdy, dx: mdx,
   #place(dy: -8.0cm, dx: 25.5cm,text(size:24pt)[Example cell 5])
   #table(columns: (2fr, 3fr),stroke: 0pt,
     text(size:24pt)[
-      #emph[Top]: Place responses for two example cells. For each cell, the gray outline represents the floor of the arena. The raw firing rate (bottom left) was computed as the total number of spikes in each bin divided by the total occupancy in that bin. Bottom right: firing rate obtained by first smoothing occupancy and spike counts. Upper right: SIC computed using the smoothed firing rate. #emph[Right]: Summary statistics. 
+      #place(dy: -1cm)[
+      #emph[Top]: Place responses for 5 example cells, with more details for the first. The gray outline represents the floor of the arena while the colored boundaries represent putative place fields. The raw firing rate was computed as the total number of spikes in each bin divided by the total occupancy in that bin. Lower right: firing rate obtained by first smoothing occupancy and spike counts,then taking the ratio. #emph[Right]: Summary statistics. ]
     ],
     image("figures/spatial_responses_summary.png",width:600pt) 
   )
@@ -97,29 +98,35 @@ place(malign, dy: mdy, dx: mdx,
 #contentbox("4. View responses", malign:top+left, mdx: 28cm, mdy: 50.5cm,mheight:31.5cm, mwidth: 36cm)[
   //#layout(size=>[Width: #size.width])
   #image("figures/view_responses_combined_new.png",width:950pt)
-    #table(columns: (640pt, auto), stroke: 0pt,
+  //#table(columns: (640pt, auto), stroke: 0pt,
+  #align(left, 
     image("figures/view_responses_summary.png",width:600pt),
+  )
+  #place(dx: 600pt,dy: -360pt,
+    rect(width: 360pt,stroke: 0pt,
     text(size:24pt)[
-      #emph[Left]: Summary for all view selective cells. A) The number of view fields per cell. The black bar represents cells that were selective without exhibiting fields. B) Distribution of field size. C) Distribution of peak firing rate. D) Number of fields overlapping with each bin. #emph[Top]: Three examples of view selective cells. Dots represent view fields.
+      #emph[Top]: Three examples of cells exhibiting view selectivity. Dots represent view fields.
+      #emph[Left]: Summary for all cells exhibiting view selectivity. A) The number of view fields per cell. The black bar represents cells that were selective without exhibiting fields. B) Distribution of field sizes. C) Distribution of peak firing rates. D) Number of overlapping fields in each bin. 
     ],
    )
+ )
 ]
 
-#contentbox("5. Oriented place fields", malign:top+left, mdx: 65cm, mdy: 20cm,mheight:16.5cm, mwidth: 26cm)[
+#contentbox("5. Directional place fields", malign:top+left, mdx: 65cm, mdy: 20cm,mheight:17cm, mwidth: 26cm)[
   //#layout(size=>[Width: #size.width])
-  #image("figures/oriented_place_field_example_p20180727s01a03g086c01.png")
+  #image("figures/oriented_place_field_example_p20180727s01a03g086c01.png",width:680pt)
   #place(
   text(size:24pt)[
-    An example of an oriented place field (red outline) and a field without orientation preference (orange outline). The activity within red place field was higher (red star vs box plt) when the animal traversed the field in the opposite direction to its major axis (black arrow) compared along the field.
+    An example of an oriented place field (red outline) and a field without orientation preference (orange outline). The activity within the red place field was higher (red star vs box plot) when the animal traversed the field in the reverse, compared to forward, direction along its major axis (black arrow).
     ]
   )
 ]
 
-#contentbox("6. Conjunctive responses", malign:top+left, mdx: 65cm, mdy: 37.5cm,mheight:22.5cm, mwidth: 26cm)[
+#contentbox("6. Conjunctive responses", malign:top+left, mdx: 65cm, mdy: 38cm,mheight:22cm, mwidth: 26cm)[
   //#layout(size=>[Width: #size.width])
   #image("figures/place_view_conjunction_p20180710s01a03g086c02.png", width:700pt)
   #text(size:24pt)[
-    Spatial activity of one conjunctive cell, conditioned on the view field (in field) and on view bins outside the view field (out of field). The mean firing rate in the place field (red border) was significantly ($p < 0.01$) higher when conditioning on the view field than on other view bins (star vs box plot).
+    Spatial activity of a cell exhibiting conjunctive activity, conditioned on the view field (in field) and on view bins outside the view field (out of field). The mean firing rate in the place field (pink border) was significantly ($p < 0.01$) higher when conditioning on the view field than on other view bins (star vs box plot).
   ]
 ]
 
