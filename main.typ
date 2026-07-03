@@ -48,13 +48,13 @@ place(malign, dy: mdy, dx: mdx,
 
 #place(right+top, dy:3cm, dx:-1cm, image("figures/N.1 Logo.jpg",width:13cm))
 
-#contentbox("1. Introduction", malign:top+left, mdy: 20cm,mheight:12cm, mwidth: 27cm)[
+#contentbox("1. Introduction", malign:top+left, mdy: 20cm,mheight:12.4cm, mwidth: 27cm)[
   #text(size:24pt)[
-   The responses of primate Hippocampal cells have been found to exhibit mixed selectivity to both space and view, supporting an increased role of vision in navigation compared to rodents. In this study, we record from such cells as a non-human primate subject navigates a virtual maze. Using a detailed, mesh based method to quantify how these cells respond to both spatial location and gaze position, we find a substantial portion with complex mixed responses to these two aspects of the task. 
+   The responses of primate Hippocampal cells have been found to exhibit mixed selectivity to both space and view, supporting an increased role of vision in navigation compared to rodents. In this study, we record from such cells as a non-human primate subject navigates a virtual maze. Using a detailed, mesh based method to quantify how these cells respond to both spatial location and gaze position, we find a substantial portion with  mixed place and view responses, highlighting the complex role that the primate Hippocampus plays during navigation.
   ]
 ]
 
-#contentbox("2. Methods", malign:top+left, mdy: 33cm,mheight:49cm, mwidth: 27cm)[
+#contentbox("2. Methods", malign:top+left, mdy: 33.4cm,mheight:48.6cm, mwidth: 27cm)[
   
   //#layout(size=>[Width: #size.width])
   #set text(size:24pt)
@@ -145,7 +145,7 @@ place(malign, dy: mdy, dx: mdx,
   #image("figures/sequence_decoding_figure.png",width:650pt)
   #place(
     text(size:24pt)[
-      A) The white traces illustrate some representative trajectories used to train the decoder, while the heatmap represents the density of points visited by all trajectories. B) The coding strength at the peak performance (C) for each cell, separated into different categories. Note that non-selective cells had higher coding strength than selective cells. D) The coding strength of all cells as a function of time, sorted according to the categories in B. E) The alignment of coding strength between subsequent time steps. The code became more stable as time progressed.
+      A) The white traces illustrate some representative trajectories used to train the decoder, while the heatmap represents the density of points visited by all trajectories. B) The coding strength at the peak performance (C) for each cell, separated into different categories. Note that non-selective cells had higher coding strength than selective cells. D) The coding strength of all cells as a function of time, sorted according to the categories in B. E) The alignment of coding strength between subsequent time steps, showing that the code appeared to become more stable as time progressed.
     ]
   )
 ]
